@@ -3,4 +3,4 @@
 var argv = require('minimist')(process.argv.slice(2));
 var tpr = require('./');
 
-tpr(argv._[0], 'placholder', console.log);
+tpr(argv._[0], 'placeholder', console.log);

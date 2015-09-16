@@ -14,12 +14,12 @@ module.exports = function (deck, msg, cb) {
   if (!token) {
     return console.error('Cannot upstream, need github token, see @deck/upstream Readme');
   }
-  if (!company) { 
+  if (!company) {
     return console.error('Cannot upstream, need github namespace, see @deck/upstream Readme');
   }
 
   var client = github({
-    auth: config.token, 
+    auth: config.token,
     version:3
   });
 
@@ -34,7 +34,7 @@ module.exports = function (deck, msg, cb) {
   if (!fs.existsSync(localDir)) {
     throw Error('deck does not exist locally, dir: ' + localDir);
   }
-  function clean (err) { 
+  function clean (err) {
     clean.err = err;
     client.delete('/repos/' + company + '/' + remoteDeck + '/git/' + clean.meta.ref, {})
       .then(function () {
@@ -70,13 +70,13 @@ module.exports = function (deck, msg, cb) {
       .catch(clean)
       .then(function (res) {
         if (clean.err){return;}
-        var master = {user: company, repo: remoteDeck, branch: 'master'};  
+        var master = {user: company, repo: remoteDeck, branch: 'master'};
         var message = {
           title: title,
           body: msg
         }
         return client.pull({
-            __proto__: master, 
+            __proto__: master,
             branch: branch
           }, master, message)
 
