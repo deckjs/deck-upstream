@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var argv = require('minimist')(process.argv.slice(2));
-var tpr = require('./');
+var argv = require('minimist')(process.argv.slice(2))
+var tpr = require('./')
 
-tpr(argv._[0], 'placeholder', console.log);
+tpr(argv._[0], 'placeholder', console.log)
