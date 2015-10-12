@@ -47,8 +47,7 @@ module.exports = function (deck, msg, cb) {
     var branch = uid()
 
     if (err) {
-      cb(err)
-      return
+      return cb(err)
     }
 
     client.exists(company, remoteDeck)
