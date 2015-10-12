@@ -1,11 +1,15 @@
 {
   "name": "@deck/upstream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "standard": "standard --format"
   },
+  "pre-commit": [
+    "standard"
+  ],
   "author": "David Mark Clements",
   "license": "MIT",
   "dependencies": {
@@ -13,5 +17,9 @@
     "minimist": "^1.1.0",
     "rc": "^1.0.3",
     "uid": "0.0.2"
+  },
+    "devDependencies": {
+    "pre-commit": "1.1.1",
+    "standard": "5.3.1"
   }
 }
