@@ -31,5 +31,5 @@ See the [rc package](https://www.npmjs.com/package/rc) for more details about pa
 In the presentation deck folder (where the `deck.md` file is located) run the following command:
 
 ```sh
-deck upstream
+deck upstream "<material name>"
 ```
