@@ -16,15 +16,15 @@ See [Creating a github token](https://help.github.com/articles/creating-an-acces
 
 The config file must be located on one of the following places:
 
-* a local .${appname}rc or the first found looking in ./ ../ ../../ ../../../ etc.
-* $HOME/.${appname}rc
-* $HOME/.${appname}/config
-* $HOME/.config/${appname}
-* $HOME/.config/${appname}/config
-* /etc/${appname}rc
-* /etc/${appname}/config
+* a local `.deckrc` or the first found looking in `./ ../ ../../ ../../../` etc.
+* `$HOME/.deckrc`
+* `$HOME/.deck/config`
+* `$HOME/.config/deck`
+* `$HOME/.config/deck/config`
+* `/etc/deckrc`
+* `/etc/deck/config`
 
-See the [rc](https://www.npmjs.com/package/rc) package for more details about passing configuration content.
+See the [rc package](https://www.npmjs.com/package/rc) for more details about passing configuration content.
 
 ## Upstream usage
 
