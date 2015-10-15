@@ -17,20 +17,22 @@ module.exports = function (deck, msg, cb) {
   }
 
   var client = github({
-    auth: config.token,
+    auth: token,
     version: 3
   })
 
-  var localDeck = deck
+  // var localDeck = deck
   var remoteDeck = deck
   if (typeof deck === 'object') {
-    localDeck = deck.local
+    // localDeck = deck.local
     remoteDeck = deck.remote
   }
-  var localDir = process.env.HOME + '/.decks/lib/node_modules/' + localDeck
+
+  var localDir = process.cwd()
   if (!fs.existsSync(localDir)) {
     throw Error('deck does not exist locally, dir: ' + localDir)
   }
+
   function clean (err) {
     clean.err = err
     client.delete('/repos/' + company + '/' + remoteDeck + '/git/' + clean.meta.ref, {})
@@ -47,8 +49,7 @@ module.exports = function (deck, msg, cb) {
     var branch = uid()
 
     if (err) {
-      cb(err)
-      return
+      return cb(err)
     }
 
     client.exists(company, remoteDeck)

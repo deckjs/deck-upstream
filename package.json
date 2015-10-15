@@ -10,6 +10,10 @@
   "pre-commit": [
     "standard"
   ],
+  "files": [
+    "cmd.js",
+    "index.js"
+  ],
   "author": "David Mark Clements",
   "license": "MIT",
   "dependencies": {
