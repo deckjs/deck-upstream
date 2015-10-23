@@ -1,14 +1,15 @@
 {
   "name": "@deck/upstream",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "standard"
+    "lint": "standard",
+    "format": "standard --lint"
   },
   "pre-commit": [
-    "format"
+    "lint"
   ],
   "files": [
     "cmd.js",
